@@ -74,35 +74,35 @@ echo "options kvm_intel nested=1" >> /etc/modprobe.d/modprobe.conf
 
 #### 3.2 License Agreement  【I agree】
 
-#### ![2](D:/pic/2.png)
+#### ![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/2.png)
 
 #### 3.3 Target harddisk 选择你的安装磁盘【NEXT】
 
 ​	选择option 可更改filesystem 和 磁盘大小，这边选择默认即可。
 
-![3](D:/pic/3.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/3.png)
 
 #### 3.4 Location and Time zone  地区和时间选择【NEXT】
 
-![4](D:/pic/4.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/4.png)
 
 #### 3.5 Administration password and Email address 管理密码和邮件
 
 ​	邮件地址必填。
 
-![5](D:/pic/5.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/5.png)
 
 #### 3.6 Management Network Configuration 管理网络配置
 
 ​	hostname：vm-pve
 
-![6](D:/pic/6.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/6.png)
 
 #### 3.7 Summary总结【Install】
 
 ​	确认你的配置是否正确。等待安装即可。
 
-![7](D:/pic/7.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/7.png)
 
 #### 3.8 登录
 
@@ -112,7 +112,7 @@ echo "options kvm_intel nested=1" >> /etc/modprobe.d/modprobe.conf
 
 ​	登录后先修改语言为简体中文。
 
-![8](D:/pic/8.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/8.png)
 
 ------
 
@@ -122,23 +122,23 @@ echo "options kvm_intel nested=1" >> /etc/modprobe.d/modprobe.conf
 
 ​	点击左侧列表至数据中心—集群；选择创建集群。
 
-![9](D:/pic/9.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/9.png)
 
-![10](D:/pic/10.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/10.png)
 
 #### 4.2 加入集群
 
 ​	复制加入信息，输入对端root密码 加入集群。其他pve节点点击加入集群同理。
 
-![11](D:/pic/11-16381716690272.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/11.png)
 
-![13](D:/pic/13.png)![12](D:/pic/12.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/12.png)
 
 #### 4.3 网络
 
 网络设置根据自己的需要。可创建链路聚合等。
 
-![13-1 network](D:/pic/13-1%20network.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/13-1 network.png)
 
 ------
 
@@ -150,9 +150,8 @@ echo "options kvm_intel nested=1" >> /etc/modprobe.d/modprobe.conf
 
 ​	在数据中心视图下，找到存储—添加—NFS；在添加NFS（读取群晖的固件iso）要注意，ID 一般为ISO，服务器为群晖NAS的地址，192.168.8.X，Export 为 /volume1/test/template/iso/   
 
-![14](D:/pic/14.png)
-
-![15](D:/pic/15.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/14.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/15.png)
 
 ------
 
@@ -162,13 +161,13 @@ echo "options kvm_intel nested=1" >> /etc/modprobe.d/modprobe.conf
 
 ​		PVE WEB界面中，选择节点—磁盘 中添加磁盘即可，一般选用LVM-Thin。
 
-![16](D:/pic/16.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/16.png)
 
 #### 	2.2 vm2无法创建同名LVM-Thin
 
 ​		数据中心—存储中双击编辑yhw-data 勾选所有。
 
-![17](D:/pic/17.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/17.png)
 
 vm2中：
 
@@ -186,7 +185,7 @@ w
 
 回到vm2中的磁盘 LVM-Thin中，选择创建Thinpool；去掉添加存储，即可创建同名LVM-Thin。
 
-![18](D:/pic/18.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/18.png)
 
 ------
 
@@ -196,7 +195,7 @@ w
 
 在进行vm主机扩容前，我们需要先了解LVM相关的一些基础知识。以下我总结为一幅图。
 
-<img src="D:/pic/19.png" alt="19" style="zoom: 67%;" />
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/19.png)
 
 可以看到，按照图中的解释，我们将步骤大致分为四个：**对实体磁盘的处理、PV实体卷组的创建、VG的创建或扩容、LV逻辑卷组的创建或扩容。**
 
@@ -255,23 +254,15 @@ A：该磁盘已经有了分区表，虚拟机无法识别磁盘的分区表，�
 
 ### 第三部分：新建虚拟机
 
-![20](D:/pic/20.png)
-
-![21](D:/pic/21.png)
-
-![22](D:/pic/22.png)
-
-![23](D:/pic/23-16381743415013.png)
-
-![24](D:/pic/24.png)
-
-![25](D:/pic/25.png)
-
-![26](D:/pic/26.png)
-
-![27](D:/pic/27.png)
-
-![28](D:/pic/28.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/20.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/21.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/22.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/23.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/24.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/25.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/26.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/27.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/28.png)
 
 
 
@@ -321,7 +312,7 @@ qm template 001
 
 先创建一个虚拟机，分离和删除原磁盘。
 
-![29](D:/pic/29.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/29.png)
 
 pve宿主机的shell中输入以下命令，240为你创建的虚拟机的vm-ID，yhw-data 是所选的磁盘。
 
@@ -329,11 +320,11 @@ pve宿主机的shell中输入以下命令，240为你创建的虚拟机的vm-ID�
 qm importdisk 240 ubuntu-20.04-server-cloudimg-amd64.img  yhw-data
 ```
 
-![30](D:/pic/30.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/30.png)
 
 等待进度完成后，可到虚拟机的磁盘页面中双击添加。**记得勾选SSD仿真和丢弃。**
 
-![31](D:/pic/31.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/31.png)
 
 某些镜像文件importdisk后，磁盘大小非整，例如2252M。先分离磁盘，再用下面的命令进行扩容到整数。
 
@@ -364,9 +355,9 @@ yum -y install cloud-init
 
 选项中的QEMU Guest Agent 是否启用、fstrim_cloned_disks
 
-![32](D:/pic/32.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/32.png)
 
-![33](D:/pic/33-16381759892724.png)
+![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/33.png)
 
 ------
 
