@@ -70,7 +70,7 @@ echo "options kvm_intel nested=1" >> /etc/modprobe.d/modprobe.conf
 
 ​		从U盘启动后，会进入安装pve 的安装界面，同时也会有debug 模式和rescue boot 以及内存测试模式。**选择Install Promox VE**
 
-![image]https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/1.png
+![]https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/1.png
 
 #### 3.2 License Agreement  【I agree】
 
