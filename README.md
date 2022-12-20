@@ -342,7 +342,7 @@ A：可进入/etc/pve，找到对应的ID*.conf，修改并删除"`template: 1`"
 直接安装系统并安装Cloudinit内部依赖包：
 
 ```
-yum -y install  Qemu-guest-agent
+yum -y install  qemu-guest-agent
 yum -y install cloud-init
 ```
 
