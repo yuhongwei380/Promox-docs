@@ -328,7 +328,7 @@ qm importdisk 240 ubuntu-20.04-server-cloudimg-amd64.img  yhw-data
 某些镜像文件importdisk后，磁盘大小非整，例如2252M。先分离磁盘，再用下面的命令进行扩容到整数。
 
 ```
-lvresive -L +1844M /dev/vm-data/vm-240-disk-0
+lvresize -L +1844M /dev/vm-data/vm-240-disk-0
 ```
 
 双击添加磁盘后，即可发现磁盘容量已经整数。
