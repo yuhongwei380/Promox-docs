@@ -15,16 +15,18 @@ pve服务需要host文件正确，否则会出现无法启动的问题。
 echo "deb https://mirrors.apqa.cn/proxmox/ pvearm main">/etc/apt/sources.list.d/foxi.list
 curl -L https://mirrors.apqa.cn/proxmox/gpg.key |apt-key add 
 ```
+## 4. 默认vnc是无法进行鼠标点击的，需要更新相关deb包
+qemu-server_7.4-3_arm64.deb
 
-## 4.arm-pve中添加vm需要注意：
-### 4.1 BIOS必须为OVMF(UEFI)
-### 4.2 需要添加EFI磁盘
-### 4.3 需要添加串行端口
-### 4.4 处理器为host或者默认
-### 4.5 添加clou-init 磁盘 
+## 5.arm-pve中添加vm需要注意：
+### 5.1 BIOS必须为OVMF(UEFI)
+### 5.2 需要添加EFI磁盘
+### 5.3 需要添加串行端口
+### 5.4 处理器为host或者默认
+### 5.5 添加clou-init 磁盘 
 
 
-## 5. arm-ubuntu  cloud-init模板机需要做的：
+## 6. arm-ubuntu  cloud-init模板机需要做的：
 通常我们会使用以下命令来进行导入模板机和进行相关调整
 ```
 qm importdisk 100  ubuntu-22.04-server-cloudimg-arm64.img   local-lvm   #把cloud-image 导入到序号为100的虚拟机
@@ -34,26 +36,26 @@ lvresize -l +1844MB   /dev/pve/vm-100-disk-0                            #默认�
 ```
 apt install qemu-guest-agnet
 ```
-### 5.1安装ccache
+### 6.1安装ccache
 ```
 apt install ccache
 ```
-### 5.2 安装tuned
+### 6.2 安装tuned
 ```
 apt install tuned
 ```
-### 5.3 安装docker
+### 6.3 安装docker
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
-### 5.4安装docker-compose
+### 6.4安装docker-compose
 ```
 curl -SL https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-aarch64 -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
-### 5.5 python3-pip
+### 6.5 python3-pip
 ```
 apt install python3-pip
 ```
