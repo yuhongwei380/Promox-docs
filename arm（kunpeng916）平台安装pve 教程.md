@@ -16,14 +16,18 @@ curl -L https://mirrors.apqa.cn/proxmox/gpg.key |apt-key add
 ### 4.2 需要添加EFI磁盘
 ### 4.3 需要添加串行端口
 ### 4.4 处理器为host或者默认
+### 4.5 添加clou-init 磁盘 
 
 
 ## 5. arm-ubuntu  cloud-init模板机需要做的：
-通常我们会使用
+通常我们会使用以下命令来进行导入模板机和进行相关调整
 ```
 qm importdisk 100  ubuntu-22.04-server-cloudimg-arm64.img   local-lvm   #把cloud-image 导入到序号为100的虚拟机
 lvresize -l +1844MB   /dev/pve/vm-100-disk-0                            #默认导入的Cloud-image 磁盘为非整数大小，可通过这个命令扩容到整数大小
-
+```
+除此之外，我们想要使用clou-init 还需要在虚拟机内安装qemu-guest-agent
+```
+apt install qemu-guest-agnet
 ```
 ### 5.1安装ccache
 apt install ccache
