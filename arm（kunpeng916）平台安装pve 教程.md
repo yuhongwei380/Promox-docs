@@ -30,14 +30,25 @@ lvresize -l +1844MB   /dev/pve/vm-100-disk-0                            #默认�
 apt install qemu-guest-agnet
 ```
 ### 5.1安装ccache
+```
 apt install ccache
+```
 ### 5.2 安装tuned
+```
 apt install tuned
+```
 ### 5.3 安装docker
+```
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
+```
 ### 5.4安装docker-compose
+```
 curl -SL https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-aarch64 -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
 ### 5.5 python3-pip
+```
+apt install python3-pip
+```
