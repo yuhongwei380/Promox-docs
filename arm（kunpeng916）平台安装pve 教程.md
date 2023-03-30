@@ -18,18 +18,22 @@ curl -L https://mirrors.apqa.cn/proxmox/gpg.key |apt-key add
 ### 4.4 处理器为host或者默认
 
 
-------------------------------------------------------------------------------------------
-arm-ubuntu  cloud-init模板机需要做的：
-1.安装ccache
+## 5. arm-ubuntu  cloud-init模板机需要做的：
+通常我们会使用
+```
+qm importdisk 100  ubuntu-22.04-server-cloudimg-arm64.img   local-lvm   #把cloud-image 导入到序号为100的虚拟机
+lvresize -l +1844MB   /dev/pve/vm-100-disk-0                            #默认导入的Cloud-image 磁盘为非整数大小，可通过这个命令扩容到整数大小
+
+```
+### 5.1安装ccache
 apt install ccache
-2.安装tuned
+### 5.2 安装tuned
 apt install tuned
-3.安装docker
+### 5.3 安装docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-
-4.安装docker-compose
+### 5.4安装docker-compose
 curl -SL https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-aarch64 -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-5.python3-pip
+### 5.5 python3-pip
