@@ -60,6 +60,7 @@ sudo cp -af  /home/vesoft/daemon.json   /etc/docker/
 sudo systemctl daemon-reload
 sudo systemctl enable docker
 sudo systemctl restart docker
+usermod -aG docker vesoft
 
 ```
 ### 6.4安装docker-compose
