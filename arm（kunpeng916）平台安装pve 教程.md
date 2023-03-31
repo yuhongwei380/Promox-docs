@@ -49,6 +49,18 @@ apt install tuned
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
+```
+sudo cat << EOF >/home/vesoft/daemon.json
+{
+"experimental": true,
+"registry-mirrors": ["http://hub-mirror.c.163.com,reg.vesoft-inc.com,"experimental": true"]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl enable docker
+sudo systemctl restart docker
+
+```
 ### 6.4安装docker-compose
 ```
 curl -SL https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-aarch64 -o /usr/local/bin/docker-compose
