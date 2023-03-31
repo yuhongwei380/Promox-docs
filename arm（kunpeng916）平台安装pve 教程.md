@@ -44,15 +44,15 @@ apt install ccache
 ```
 apt install tuned
 mkdir -p /etc/tuned/nebula
+```
+```
 cat << EOF > /etc/tuned/nebula/tuned.conf
 [main]
 summary=Optimize for Nebula Graph DBMS
 include=latency-performance
 
-
 [vm]
 transparent_hugepages=never
-
 
 [sysctl]
 kernel.core_pattern=core
@@ -78,6 +78,8 @@ net.core.netdev_max_backlog=10240
 net.ipv4.tcp_fastopen=3
 net.ipv4.tcp_slow_start_after_idle=0
 EOF
+```
+```
 systemctl restart tuned
 systemctl enable tuned
 tuned-adm profile nebula
