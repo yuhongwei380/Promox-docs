@@ -56,6 +56,7 @@ sudo cat << EOF >/home/vesoft/daemon.json
 "registry-mirrors": ["http://hub-mirror.c.163.com,reg.vesoft-inc.com,"experimental": true"]
 }
 EOF
+sudo cp -af  /home/vesoft/daemon.json   /etc/docker/
 sudo systemctl daemon-reload
 sudo systemctl enable docker
 sudo systemctl restart docker
