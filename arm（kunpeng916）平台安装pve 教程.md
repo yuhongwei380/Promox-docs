@@ -34,7 +34,7 @@ lvresize -l +1844MB   /dev/pve/vm-100-disk-0                            #默认�
 ```
 除此之外，我们想要使用clou-init 还需要在虚拟机内安装qemu-guest-agent
 ```
-apt install qemu-guest-agnet
+apt install qemu-guest-agent
 ```
 ### 6.1安装ccache
 ```
