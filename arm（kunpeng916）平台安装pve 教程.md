@@ -53,7 +53,7 @@ sudo sh get-docker.sh
 sudo cat << EOF >/home/vesoft/daemon.json
 {
 "experimental": true,
-"registry-mirrors": ["http://hub-mirror.c.163.com,reg.vesoft-inc.com,"experimental": true"]
+"registry-mirrors": ["http://hub-mirror.c.163.com,reg.vesoft-inc.com"]
 }
 EOF
 sudo cp -af  /home/vesoft/daemon.json   /etc/docker/
