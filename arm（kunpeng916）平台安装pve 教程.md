@@ -19,8 +19,11 @@ curl -L https://mirrors.apqa.cn/proxmox/gpg.key |apt-key add
 ### 4.1默认vnc是无法进行鼠标点击的，需要更新相关deb包
 qemu-server_7.4-3_arm64.deb
 ### 4.2 不显示cpu型号的问题
-libpve-common-perl_7.3-4_all.deb
+```
+apt install libipc-system-simple-perl
+dpkg -i libpve-common-perl_7.3-4_all.deb
 systemctl restart pvedaemon
+```
 
 ## 5.arm-pve中添加vm需要注意：
 ### 5.1 BIOS必须为OVMF(UEFI)
