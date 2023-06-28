@@ -169,10 +169,11 @@ echo "options kvm_intel nested=1" >> /etc/modprobe.d/modprobe.conf
 ![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/17.png)
 
 vm2中：
-
+格式话磁盘并且设置磁盘格式。
 ```
 fdisk -l
 fdisk /dev/sdb
+g
 n
 p
 1
@@ -185,6 +186,16 @@ w
 回到vm2中的磁盘 LVM-Thin中，选择创建Thinpool；去掉添加存储，即可创建同名LVM-Thin。
 
 ![](https://github.com/yuhongwei380/Promox-docs/blob/main/IMG/18.png)
+
+当我们遇到meta数据爆满以后，我们选择的解决方法是，迁移掉所有虚拟机。对磁盘进行再分区然后进行lvm格式化并且重置meta。
+```
+pvcreate  /dev/nvme1n1
+pvcreate /devnvme2n1
+vgcreate vm-data   /dev/nvme1n1   /dev/nvme2n1
+vgsdisplay
+lvcreate --type thin-pool --poolmetadatasize 16G -L  625736  -n vm-data vm-data
+lvresize --extents +100%FREE  /dev/vm-data/vm-data
+```
 
 ------
 
