@@ -29,10 +29,9 @@ pve服务需要host文件正确，否则会出现无法启动的问题。
 ```
 echo "deb https://mirrors.apqa.cn/proxmox/ pvearm main">/etc/apt/sources.list.d/foxi.list
 curl -L https://mirrors.apqa.cn/proxmox/gpg.key |apt-key add
-
-echo "deb https://apqa.cn/proxmox/ pvearm main">/etc/apt/sources.list.d/foxi.list
-curl -L https://apqa.cn/proxmox/gpg.key |apt-key add
 ```
+wiki:
+https://github.com/jiangcuo/Proxmox-Arm64/wiki/Install-Proxmox-VE-on-Debian-bullseye
 ## 4. 补丁包
 ### 4.1默认vnc是无法进行鼠标点击的，需要更新相关deb包
 qemu-server_7.4-3_arm64.deb
