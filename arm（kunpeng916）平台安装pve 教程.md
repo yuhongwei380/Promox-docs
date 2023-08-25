@@ -5,6 +5,21 @@
 ```
 vim /etc/network/interfaces
 systemctl restart networking
+auto bond0
+iface bond0 inet mamual
+        bond-slaves enahisic2i2 enahisic2i3
+        bond-miimon 100
+        bond-mode 802.3ad
+        bond-downdelay 200
+        bond-updelay 200
+
+auto vmbr0
+iface vmbr0 inet static
+        address 192.168.8.216/24
+        gateway 192.168.8.1
+        bridge-ports bond0
+        bridge-stp off
+        bridge-fd 0
 ```
 
 ## 2.hosts相关，安装界面要确定好相关hosts和主机名一般为arm-pve1.domain.com
